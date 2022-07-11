@@ -1,3 +1,51 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  text-align: center;
+  font-family: arial;
+  font-size: 24px;
+}
+
+h1 {
+  margin: 20px;
+}
+
+h3 {
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
 img {
   width: 200px;
+  margin: 0 40px;
+  padding: 20px;
+}
+
+button {
+  font-size: 26px;
+  margin: 40px;
+  padding: 10px 20px;
+  background-color: #fff;
+}
+
+.results {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 40px;
+}
+
+.results>div>h2 {
+  padding: 10px;
+}
+
+.results>div>div {
+  padding: 5px;
+}
+
+.results>div>div>span {
+  font-weight: bold;
 }
