@@ -33,7 +33,6 @@ const aiSelection = () => {
 const showResult = () => {
   showUserSelection.textContent = gamePicks.userPick;
   showAiSelection.textContent = gamePicks.aiPick;
-  options.forEach(option => option.style.boxShadow = '');
 }
 
 const gameWinner = (player, ai) => {
@@ -59,15 +58,20 @@ const displayCounters = () => {
   document.querySelector('.rightPanel div:nth-of-type(4) span').textContent = gameResults.draws
 }
 
+const endGame = () => {
+  options.forEach(option => option.style.boxShadow = '');
+  gamePicks.userPick = '';
+}
 
 const startGame = () => {
   if (!gamePicks.userPick) return alert('no option selected!!');
 
   gamePicks.aiPick = aiSelection();
-  showResult();
   gameWinner(gamePicks.userPick, gamePicks.aiPick);
+  showResult();
   gameResults.games++;
   displayCounters()
+  endGame()
 }
 
 playButton.addEventListener('click', startGame)
