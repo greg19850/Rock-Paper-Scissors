@@ -28,27 +28,45 @@ options.forEach(option => option.addEventListener('click', pickHand));
 const gameWinner = () => {
   if (gamePicks.userPick == 'rock') {
     if (gamePicks.aiPick == 'paper') {
-      showWinner.textContent = 'AI Wins :('
+      showWinner.textContent = 'AI Wins :(';
+      showWinner.style.color = 'red';
+      gameResults.loses++;
     } else if (gamePicks.aiPick == 'scissors') {
-      showWinner.textContent = 'You Win :D'
+      showWinner.textContent = 'You Win :D';
+      showWinner.style.color = 'green';
+      gameResults.wins++;
     } else {
-      showWinner.textContent = 'It\'s a draw!'
+      showWinner.textContent = 'It\'s a draw!';
+      showWinner.style.color = 'gray';
+      gameResults.draws++;
     }
   } else if (gamePicks.userPick == 'paper') {
     if (gamePicks.aiPick == 'scissors') {
-      showWinner.textContent = 'AI Wins :('
+      showWinner.textContent = 'AI Wins :(';
+      showWinner.style.color = 'red';
+      gameResults.loses++;
     } else if (gamePicks.aiPick == 'rock') {
-      showWinner.textContent = 'You Win :D'
+      showWinner.textContent = 'You Win :D';
+      showWinner.style.color = 'green';
+      gameResults.wins++;
     } else {
-      showWinner.textContent = 'It\'s a draw!'
+      showWinner.textContent = 'It\'s a draw!';
+      showWinner.style.color = 'gray';
+      gameResults.draws++;
     }
   } else if (gamePicks.userPick == 'scissors') {
     if (gamePicks.aiPick == 'rock') {
-      showWinner.textContent = 'AI Wins :('
+      showWinner.textContent = 'AI Wins :(';
+      showWinner.style.color = 'red';
+      gameResults.loses++;
     } else if (gamePicks.aiPick == 'paper') {
-      showWinner.textContent = 'You Win :D'
+      showWinner.textContent = 'You Win :D';
+      showWinner.style.color = 'green';
+      gameResults.wins++;
     } else {
-      showWinner.textContent = 'It\'s a draw!'
+      showWinner.textContent = 'It\'s a draw!';
+      showWinner.style.color = 'gray';
+      gameResults.draws++;
     }
   }
 }
