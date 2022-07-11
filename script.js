@@ -56,7 +56,6 @@ const gameWinner = () => {
 const showResult = () => {
   showUserSelection.textContent = gamePicks.userPick;
   showAiSelection.textContent = gamePicks.aiPick;
-  gameWinner()
   options.forEach(option => option.style.boxShadow = '');
 }
 
@@ -69,8 +68,9 @@ const startGame = () => {
   if (!gamePicks.userPick) return alert('no option selected!!');
 
   gamePicks.aiPick = aiSelection();
-
   showResult()
+  gameWinner()
+  gameResults.games++
 }
 
 playButton.addEventListener('click', startGame)
