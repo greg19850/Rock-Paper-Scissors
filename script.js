@@ -10,7 +10,7 @@ const gameResults = {
 
 const gamePicks = {
   userPick: '',
-  AiPick: '',
+  aiPick: '',
 };
 
 const pickHand = function () {
@@ -21,3 +21,17 @@ const pickHand = function () {
 }
 
 options.forEach(option => option.addEventListener('click', pickHand));
+
+const aiSelection = () => {
+  const selection = options[Math.floor(Math.random() * 3)].dataset.option
+  return selection
+}
+
+const startGame = () => {
+  if (!gamePicks.userPick) return alert('no option selected!!');
+
+  gamePicks.aiPick = aiSelection();
+  options.forEach(option => option.style.boxShadow = '');
+}
+
+playButton.addEventListener('click', startGame)
